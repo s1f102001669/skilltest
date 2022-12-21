@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>net test</title>
+    </head>
+
+    <body>
+        <a href="{% url 'index' %}">home</a>
+        <br>
+        
+        <p>net test</p>
+        <form name="ques" method="post">
+            {% csrf_token %}
+            <p>Q1. {{ net.0.ques }}</p>
+            <label for="radio11">○</label>
+            <input id="radio11" name="option0" type="radio" value="○" required><br>
+            <label for="radio12">×</label>
+            <input id="radio12" name="option0" type="radio" value="×"><br>
+
+            <p>Q2. {{ net.1.ques }}</p>
+            <label for="radio21">○</label>
+            <input id="radio21" name="option1" type="radio" value="○" required><br> 
+            <label for="radio22">×</label>
+            <input id="radio22" name="option1" type="radio" value="×"><br>
+        
+            <p>Q3. {{ net.2.ques }}</p>
+            <label for="radio31">○</label>
+            <input id="radio31" name="option2" type="radio" value="○" required><br> 
+            <label for="radio32">×</label>
+            <input id="radio32" name="option2" type="radio" value="×"><br>   
+            
+            <p>Q4. {{ net.3.ques }}</p>
+            <label for="radio41">○</label>
+            <input id="radio41" name="option3" type="radio" value="○" required><br> 
+            <label for="radio42">×</label>
+            <input id="radio42" name="option3" type="radio" value="2"><br>
+            
+            <p>Q5. {{ net.4.ques }}</p>
+            <label for="radio51">○</label>
+            <input id="radio51" name="option4" type="radio" value="○" required><br>
+            <label for="radio52">×</label>
+            <input id="radio52" name="option4" type="radio" value="×"><br>     
+            
+            <p>Q6. {{ net.5.ques }}</p>
+            <label for="radio61">○</label>
+            <input id="radio61" name="option5" type="radio" value="○" required><br>           
+            <label for="radio62">×</label>
+            <input id="radio62" name="option5" type="radio" value="×"><br>   
+            
+            <p>Q7. {{ net.6.ques }}</p>
+            <label for="radio71">○</label>
+            <input id="radio71" name="option6" type="radio" value="○" required><br>
+            <label for="radio72">×</label>
+            <input id="radio72" name="option6" type="radio" value="×"><br>          
+            
+            <p>Q8. {{ net.7.ques }}</p>
+            <label for="radio81">○</label>
+            <input id="radio81" name="option7" type="radio" value="○" required><br>         
+            <label for="radio82">×</label>
+            <input id="radio82" name="option7" type="radio" value="×"><br>
+            
+            <p>Q9. {{ net.8.ques }}</p>
+            <label for="radio91">○</label>
+            <input id="radio91" name="option8" type="radio" value="○" required><br>
+            <label for="radio92">×</label>
+            <input id="radio92" name="option8" type="radio" value="×"><br>
+            
+            <p>Q10. {{ net.9.ques }}</p>
+            <label for="radio01">○</label>
+            <input id="radio01" name="option9" type="radio" value="○" required><br>         
+            <label for="radio02">×</label>
+            <input id="radio02" name="option9" type="radio" value="×"><br>
+
+            <br>
+            <input type="submit" name="ques" value="送信">
+        </form>
+    </body>
+</html>
+
+<!--○：1、×：2-->

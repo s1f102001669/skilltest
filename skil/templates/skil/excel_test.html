@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title>excel test</title>
+    </head>
+
+    <body>
+        <a href="{% url 'index' %}">home</a>
+        <br>
+        
+        <p>excel test</p>
+
+        <form name="ques" method="post">
+            {% csrf_token %}
+            <p>Q1. {{ excel.0.ques }}</p>
+            <label for="radio11">{{ excel.0.sele1 }}</label>
+            <input id="radio11" name="option0" type="radio" value="{{ excel.0.sele1 }}" required><br>
+            <label for="radio12">{{ excel.0.sele2 }}</label>
+            <input id="radio12" name="option0" type="radio" value="{{ excel.0.sele2 }}"><br>
+            <label for="radio13">{{ excel.0.sele3 }}</label>
+            <input id="radio13" name="option0" type="radio" value="{{ excel.0.sele3 }}"><br>
+
+            <p>Q2. {{ excel.1.ques }}</p>
+            <label for="radio21">{{ excel.1.sele1 }}</label>
+            <input id="radio21" name="option1" type="radio" value="{{ excel.1.sele1 }}" required><br> 
+            <label for="radio22">{{ excel.1.sele2 }}</label>
+            <input id="radio22" name="option1" type="radio" value="{{ excel.1.sele2 }}"><br>
+            <label for="radio23">{{ excel.1.sele3 }}</label>
+            <input id="radio23" name="option1" type="radio" value="{{ excel.1.sele3 }}"><br>
+            
+            <p>Q3. {{ excel.2.ques }}</p>
+            <label for="radio31">{{ excel.2.sele1 }}</label>
+            <input id="radio31" name="option2" type="radio" value="{{ excel.2.sele1 }}" required><br> 
+            <label for="radio32">{{ excel.2.sele2 }}</label>
+            <input id="radio32" name="option2" type="radio" value="{{ excel.2.sele2 }}"><br>   
+            <label for="radio33">{{ excel.2.sele3 }}</label>
+            <input id="radio33" name="option2" type="radio" value="{{ excel.2.sele3 }}"><br>
+            
+            <p>Q4. {{ excel.3.ques }}</p>
+            <label for="radio41">{{ excel.3.sele1 }}</label>
+            <input id="radio41" name="option3" type="radio" value="{{ excel.3.sele1 }}" required><br> 
+            <label for="radio42">{{ excel.3.sele2 }}</label>
+            <input id="radio42" name="option3" type="radio" value="{{ excel.3.sele2 }}"><br>
+            <label for="radio43">{{ excel.3.sele3 }}</label>
+            <input id="radio43" name="option3" type="radio" value="{{ excel.3.sele3 }}"><br>
+            
+            <p>Q5. {{ excel.4.ques }}</p>
+            <label for="radio51">{{ excel.4.sele1 }}</label>
+            <input id="radio51" name="option4" type="radio" value="{{ excel.4.sele1 }}" required><br>
+            <label for="radio52">{{ excel.4.sele2 }}</label>
+            <input id="radio52" name="option4" type="radio" value="{{ excel.4.sele2 }}"><br>     
+            <label for="radio53">{{ excel.4.sele3 }}</label>
+            <input id="radio53" name="option4" type="radio" value="{{ excel.4.sele3 }}"><br>
+            
+            <p>Q6. {{ excel.5.ques }}</p>
+            <label for="radio61">{{ excel.5.sele1 }}</label>
+            <input id="radio61" name="option5" type="radio" value="{{ excel.5.sele1 }}" required><br>           
+            <label for="radio62">{{ excel.5.sele2 }}</label>
+            <input id="radio62" name="option5" type="radio" value="{{ excel.5.sele2 }}"><br>   
+            <label for="radio63">{{ excel.5.sele3 }}</label>
+            <input id="radio63" name="option5" type="radio" value="{{ excel.5.sele3 }}"><br>
+            
+            <p>Q7. {{ excel.6.ques }}</p>
+            <label for="radio71">{{ excel.6.sele1 }}</label>
+            <input id="radio71" name="option6" type="radio" value="{{ excel.6.sele1 }}" required><br>
+            <label for="radio72">{{ excel.6.sele2 }}</label>
+            <input id="radio72" name="option6" type="radio" value="{{ excel.6.sele2 }}"><br>          
+            <label for="radio73">{{ excel.6.sele3 }}</label>
+            <input id="radio73" name="option6" type="radio" value="{{ excel.6.sele3 }}"><br>
+            
+            <p>Q8. {{ excel.7.ques }}</p>
+            <label for="radio81">{{ excel.7.sele1 }}</label>
+            <input id="radio81" name="option7" type="radio" value="{{ excel.7.sele1 }}" required><br>         
+            <label for="radio82">{{ excel.7.sele2 }}</label>
+            <input id="radio82" name="option7" type="radio" value="{{ excel.7.sele2 }}"><br>
+            <label for="radio83">{{ excel.7.sele3 }}</label>
+            <input id="radio83" name="option7" type="radio" value="{{ excel.7.sele3 }}"><br>
+            
+            <p>Q9. {{ excel.8.ques }}</p>
+            <label for="radio91">{{ excel.8.sele1 }}</label>
+            <input id="radio91" name="option8" type="radio" value="{{ excel.8.sele1 }}" required><br>
+            <label for="radio92">{{ excel.8.sele2 }}</label>
+            <input id="radio92" name="option8" type="radio" value="{{ excel.8.sele2 }}"><br>
+            <label for="radio93">{{ excel.8.sele3 }}</label>
+            <input id="radio93" name="option8" type="radio" value="{{ excel.8.sele3 }}"><br>
+            
+            <p>Q10. {{ excel.9.ques }}</p>
+            <label for="radio01">{{ excel.9.sele1 }}</label>
+            <input id="radio01" name="option9" type="radio" value="{{ excel.9.sele1 }}" required><br>         
+            <label for="radio02">{{ excel.9.sele2 }}</label>
+            <input id="radio02" name="option9" type="radio" value="{{ excel.9.sele2 }}"><br>
+            <label for="radio03">{{ excel.9.sele3 }}</label>
+            <input id="radio03" name="option9" type="radio" value="{{ excel.9.sele3 }}"><br>
+
+            <br>
+            <input type="submit" name="ques" value="送信">
+        </form>
+
+        
+
+
+
+        <!--
+        <div>
+            <input type="button" value="Check" id="checkButton">
+        </div>
+
+        <script>
+            function buttonClick(){
+              let checkValue = '';
+            
+              for (let i = 0; i < len; i++){
+                if (excelRadio.item(i).checked){
+                  checkValue = excelRadio.item(i).value;
+                }
+              }
+              console.log('選択されているのは ' + checkValue + ' です');
+            }
+            
+            let excelRadio = document.getElementsByName('option0');
+            let len = excelRadio.length;
+            excelRadio[0].checked = true;
+            
+            let checkButton = document.getElementById('checkButton');
+            checkButton.addEventListener('click', buttonClick);
+        </script>
+        -->
+        <!--
+        <script>
+            let radio_btns = document.querySelectorAll(`input[type='radio'][name='option0']`);
+
+            for (let target of radio_btns) {
+                target.addEventListener(`change`, () => {
+                    var radio = document.querySelector('[name="option0"]:checked');
+                    var val = radio.value; //選択したvalue
+                    var text = radio.parentElement.innerText;
+
+                    var elemShowExcel = document.getElementById('output');
+                    /*elemShowExcel.innerHTML = 'value : ' + val;
+                    elemShowExcel.innerHTML += '<br>';
+                    elemShowExcel.innerHTML += 'a : ' + text;
+                    elemShowExcel.innerHTML += '<br>';
+                    elemShowExcel.innerHTML += 'answer : {{excel.0.answer}}'*/
+                    if (val == '{{excel.0.answer}}') {
+                        elemShowExcel.innerHTML = 'T'
+                    } else {
+                        elemShowExcel.innerHTML = 'F'
+                    }
+                    //やりたいこと
+                    //valと{{excel.n.answer}}をanswerに送信する
+                });
+            }
+        </script>
+        -->
+        
+        
+
+        
+        <!--
+        {% if not excel.has_next %}
+            {% if '5' in request.get_full_path %}
+            <form action="{% url 'Eanswer' excel_id=5 %}" method="post">
+                {% csrf_token %}
+                <button type="submit">answer</button>
+            </form>
+            {% elif '4' in request.get_full_path %}
+            <form action="{% url 'Eanswer' excel_id=4 %}" method="post">
+                {% csrf_token %}
+                <button type="submit">answer</button>
+            </form>
+            {% elif '3' in request.get_full_path %}
+            <form action="{% url 'Eanswer' excel_id=3 %}" method="post">
+                {% csrf_token %}
+                <button type="submit">answer</button>
+            </form>
+            {% elif '2' in request.get_full_path %}
+            <form action="{% url 'Eanswer' excel_id=2 %}" method="post">
+                {% csrf_token %}
+                <button type="submit">answer</button>
+            </form>
+            {% elif '1' in request.get_full_path %}
+            <form action="{% url 'Eanswer' excel_id=1 %}" method="post">
+                {% csrf_token %}
+                <button type="submit">answer</button>
+            </form>
+            {% endif %}
+        {% endif %}
+        -->        
+    </body>    
+</html>

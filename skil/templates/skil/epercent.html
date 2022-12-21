@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>parcent</title>
+    </head>
+    <body>
+        <a href="{% url 'index' %}">home</a>
+        
+        <h1>Excel正答率</h1>
+
+
+
+        <table border=”1”>
+            <tr>
+                <th>number</th><th>ques</th><th>percent</th>
+            </tr>
+            <tr>
+                <th>{{excel.0.id}}</th><th>{{excel.0.ques}}</th><th>{{percent.0.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{excel.1.id}}</th><th>{{excel.1.ques}}</th><th>{{percent.1.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{excel.2.id}}</th><th>{{excel.2.ques}}</th><th>{{percent.2.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{excel.3.id}}</th><th>{{excel.3.ques}}</th><th>{{percent.3.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{excel.4.id}}</th><th>{{excel.4.ques}}</th><th>{{percent.4.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{excel.5.id}}</th><th>{{excel.5.ques}}</th><th>{{percent.5.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{excel.6.id}}</th><th>{{excel.6.ques}}</th><th>{{percent.6.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{excel.7.id}}</th><th>{{excel.7.ques}}</th><th>{{percent.7.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{excel.8.id}}</th><th>{{excel.8.ques}}</th><th>{{percent.8.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{excel.9.id}}</th><th>{{excel.9.ques}}</th><th>{{percent.9.percent}}%</th>
+            </tr>
+        
+        </table>
+        <div class="paginator">
+            <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+              {% if excel.has_previous %}
+                <a class="pagination-previous" href="?p={{ excel.previous_page_number }}">Previous</a>
+              {% endif %}
+              {% if excel.has_next %}
+                <a class="pagination-next" href="?p={{ excel.next_page_number }}">Next</a>
+              {% endif %}
+              <ul class="pagination-list">
+                {% if excel.has_previous %}
+                  {% if excel.previous_page_number != 1 %}
+                    <li><a class="pagination-link" href="?p=1">1</a></li>
+                    <li><span class="pagination-ellipsis">&hellip;</span></li>
+                  {% endif %}
+                  <li><a class="pagination-link" href="?p={{ excel.previous_page_number }}">{{ excel.previous_page_number }}</a></li>
+                {% endif %}
+                <li><a class="pagination-link is-current" href="?p={{ excel.number }}" >{{ excel.number }}</a></li>
+                {% if excel.has_next %}
+                  <li><a class="pagination-link" href="?p={{ excel.next_page_number }}">{{ excel.next_page_number }}</a></li>
+                  {% if excel.next_page_number != excel.paginator.num_pages %}
+                    <li><span class="pagination-ellipsis">&hellip;</span></li>
+                    <li><a class="pagination-link" href="?p={{ excel.paginator.num_pages }}">{{ excel.paginator.num_pages }}</a></li>
+                  {% endif %}
+                {% endif %}
+              </ul>
+            </nav>
+          </div>
+
+        <a href="{% url 'Npercent'%}">net</a>
+        
+    </body>
+</html>
+<!--update skil_epercent set true=0, false=0, percent=0; データベースのリセットコード-->

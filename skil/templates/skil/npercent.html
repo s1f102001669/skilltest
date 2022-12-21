@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>parcent</title>
+    </head>
+    <body>
+        <a href="{% url 'index' %}">home</a>
+        
+        <h1>Net正答率</h1>
+
+        <table border=”1”>
+            <tr>
+                <th>number</th><th>ques</th><th>percent</th>
+            </tr>
+            <tr>
+                <th>{{net.0.id}}</th><th>{{net.0.ques}}</th><th>{{percent.0.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{net.1.id}}</th><th>{{net.1.ques}}</th><th>{{percent.0.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{net.2.id}}</th><th>{{net.2.ques}}</th><th>{{percent.0.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{net.3.id}}</th><th>{{net.3.ques}}</th><th>{{percent.0.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{net.4.id}}</th><th>{{net.4.ques}}</th><th>{{percent.0.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{net.5.id}}</th><th>{{net.5.ques}}</th><th>{{percent.0.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{net.6.id}}</th><th>{{net.6.ques}}</th><th>{{percent.0.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{net.7.id}}</th><th>{{net.7.ques}}</th><th>{{percent.0.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{net.8.id}}</th><th>{{net.8.ques}}</th><th>{{percent.0.percent}}%</th>
+            </tr>
+            <tr>
+                <th>{{net.9.id}}</th><th>{{net.9.ques}}</th><th>{{percent.0.percent}}%</th>
+            </tr>
+        
+        </table>
+        <div class="paginator">
+            <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+              {% if net.has_previous %}
+                <a class="pagination-previous" href="?p={{ net.previous_page_number }}">Previous</a>
+              {% endif %}
+              {% if net.has_next %}
+                <a class="pagination-next" href="?p={{ net.next_page_number }}">Next</a>
+              {% endif %}
+              <ul class="pagination-list">
+                {% if net.has_previous %}
+                  {% if net.previous_page_number != 1 %}
+                    <li><a class="pagination-link" href="?p=1">1</a></li>
+                    <li><span class="pagination-ellipsis">&hellip;</span></li>
+                  {% endif %}
+                  <li><a class="pagination-link" href="?p={{ net.previous_page_number }}">{{ net.previous_page_number }}</a></li>
+                {% endif %}
+                <li><a class="pagination-link is-current" href="?p={{ net.number }}" >{{ net.number }}</a></li>
+                {% if net.has_next %}
+                  <li><a class="pagination-link" href="?p={{ net.next_page_number }}">{{ net.next_page_number }}</a></li>
+                  {% if net.next_page_number != net.paginator.num_pages %}
+                    <li><span class="pagination-ellipsis">&hellip;</span></li>
+                    <li><a class="pagination-link" href="?p={{ net.paginator.num_pages }}">{{ net.paginator.num_pages }}</a></li>
+                  {% endif %}
+                {% endif %}
+              </ul>
+            </nav>
+          </div>
+
+          <a href="{% url 'Epercent'%}">excel</a>       
+    </body>
+</html>
